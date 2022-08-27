@@ -1,4 +1,4 @@
-name: 'easy docker'
+name: 'Easy Docker - install, login, build, mutiplatform, push, minimal configuration'
 description: 'easy to use, configless action to install docker, build and push multiplatform images to ghcr.io'
 
 inputs:
