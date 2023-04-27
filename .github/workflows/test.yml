@@ -4,7 +4,7 @@ on:
   release:
 
 jobs:
-  test:
+  multi-platform:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,3 +12,11 @@ jobs:
         with:
           ghcr_password: ${{ secrets.GITHUB_TOKEN }}
           platforms: linux/amd64,linux/arm/v6
+  
+  single_plaform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          ghcr_password: ${{ secrets.GITHUB_TOKEN }}
