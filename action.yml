@@ -11,7 +11,9 @@ inputs:
     required: false
     default: linux/amd64
   ghcr_password:
-    description: password for Github Container Registry. Regular secrets.GITHUB_TOKEN is used.
+    description: |
+      password for Github Container Registry.
+      Regular secrets.GITHUB_TOKEN is used (keep in mind to enable write access at Settings->Actions->General->Workflow permissions.
 
 runs:
   using: "composite"
