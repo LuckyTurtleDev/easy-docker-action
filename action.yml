@@ -33,7 +33,7 @@ runs:
         password: ${{ inputs.ghcr_password }}
         config-inline: |
           [worker.oci]
-          max-parallelism = ${{ inputs.max_parallelism }}
+            max-parallelism = ${{ inputs.max_parallelism }}
     - name: Set up QEMU
       if: ${{ inputs.platforms != 'linux/amd64' }}
       uses: docker/setup-qemu-action@v2
