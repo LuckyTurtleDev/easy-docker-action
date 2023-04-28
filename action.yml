@@ -14,6 +14,10 @@ inputs:
     description: |
       password for Github Container Registry.
       Regular secrets.GITHUB_TOKEN is used (keep in mind to enable write access at Settings->Actions->General->Workflow permissions.
+  max_parallelism:
+    description: Number of the maximum parallelism for your builds
+    required: false
+    default: 4
 
 runs:
   using: "composite"
@@ -27,6 +31,9 @@ runs:
         registry: ghcr.io
         username: ${{ github.repository_owner }}
         password: ${{ inputs.ghcr_password }}
+        config-inline: |
+          [worker.oci]
+          max-parallelism = ${{ inputs.max_parallelism }}
     - name: Set up QEMU
       if: ${{ inputs.platforms != 'linux/amd64' }}
       uses: docker/setup-qemu-action@v2
