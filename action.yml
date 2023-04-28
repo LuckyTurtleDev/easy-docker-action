@@ -15,7 +15,7 @@ inputs:
       password for Github Container Registry.
       Regular secrets.GITHUB_TOKEN is used (keep in mind to enable write access at Settings->Actions->General->Workflow permissions.
   max_parallelism:
-    description: Number of the maximum parallelism for your builds
+    description: DOES NOT WORK; Number of the maximum parallelism for your builds
     required: false
     default: 1
 
@@ -56,3 +56,5 @@ runs:
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}}
         platforms: ${{ inputs.platforms }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
