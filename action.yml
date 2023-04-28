@@ -17,7 +17,7 @@ inputs:
   max_parallelism:
     description: Number of the maximum parallelism for your builds
     required: false
-    default: 4
+    default: 1
 
 runs:
   using: "composite"
